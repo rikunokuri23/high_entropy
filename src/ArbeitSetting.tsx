@@ -1,3 +1,10 @@
+import { Header } from "./components/Header"
+
 export const ArbeitSetting = () => {
-    return <h1>ArbeitSetting Pase</h1>
+    return (
+        <>
+        <Header /> 
+        <h1>ArbeitSetting Pase</h1>
+        </>
+    )
 }

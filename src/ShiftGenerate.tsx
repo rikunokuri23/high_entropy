@@ -1,3 +1,10 @@
+import { Header } from "./components/Header"
+
 export const ShiftGenerate = () => {
-    return <h1>ShiftGenerate Pase</h1>
+    return (
+        <>
+        <Header /> 
+        <h1>ShiftGenerate Pase</h1>
+        </>
+    )
 }

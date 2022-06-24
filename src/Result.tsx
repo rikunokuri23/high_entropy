@@ -1,3 +1,10 @@
+import { Header } from "./components/Header"
+
 export const Result = () => {
-    return <h1>Result Pase</h1>
+    return (
+        <>
+        <Header /> 
+        <h1>Result Pase</h1>
+        </>
+    )
 }

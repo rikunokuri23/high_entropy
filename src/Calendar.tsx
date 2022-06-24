@@ -1,3 +1,10 @@
+import { Header } from "./components/Header"
+
 export const Calendar = () => {
-    return <h1>Calendar Pase</h1>
+    return (
+        <>
+        <Header /> 
+        <h1>ShiftGenerate Pase</h1>
+        </>
+    )
 }
