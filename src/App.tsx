@@ -12,17 +12,11 @@ function App() {
     <div className="App">
       <BrowserRouter >
       <Header/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Routes>
+      <Routes>
         <Route path="/" element={<ShiftGenerate/>} />
         <Route path="/arbeitsetting" element={<ArbeitSetting/>} />
         <Route path="/calendar" element={<Calendar/>} />
       </Routes>
-      </header>
       </BrowserRouter>
     </div>
     
