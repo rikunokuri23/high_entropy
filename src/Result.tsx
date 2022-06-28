@@ -1,7 +1,7 @@
 export const Result = () => {
     return (
         <>
-        <h1>Result Pase</h1>
+        <h1>シフト作成結果</h1>
         </>
     )
 }
