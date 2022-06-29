@@ -17,32 +17,26 @@ interface job {
     transportation_expenses: number,
 }
 
-interface part_time_jobs {
-    job: [job],
-    status: number
-}
-
-async function getArbeits(): Promise<part_time_jobs> {
-        const response = await axios.get<part_time_jobs>(
-            "http://20.5.121.159:5000/api/v1/part_time_jobs/"
-        );
-        console.log("response")
-        console.log(response.data);
-        return response.data;
-}
-
 export const ArbeitSetting = () => {
-    const [arbeits, setArbeits] = useState<[] |part_time_jobs>([]);
+    const [arbeits, setArbeits] = useState<Array<job>>([]);
 
     useEffect(() => {
-        (async () => {
-            const arbeits = await getArbeits();
-            setArbeits(arbeits);
-        })();
+        axios.get("http://20.5.121.159:5000/api/v1/part_time_jobs/").then((res) => {
+            setArbeits(res.data.part_time_jobs);
+        });
     }, []);
     return (
         <>
             <h1>アルバイト設定</h1>
+            <ul>
+                { arbeits.map((arbeit: job) => {
+                    return (
+                        <li key={ arbeit.id }>
+                            <p>{ arbeit.name }</p>
+                        </li>
+                    )
+                })}
+            </ul>
         </>
     )
 }
