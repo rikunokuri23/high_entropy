@@ -25,6 +25,7 @@ export const ArbeitSetting = () => {
             setArbeits(res.data.part_time_jobs);
         });
     }, []);
+    
     return (
         <>
             <h1>アルバイト設定</h1>
