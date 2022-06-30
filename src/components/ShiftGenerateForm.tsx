@@ -107,7 +107,7 @@ export const ShiftGenerateFrom = () => {
     const formatMonth = ("00" + String(month)).slice(-2);
     const formatDay = ("00" + String(day)).slice(-2);
     return `${year}-${formatMonth}-${formatDay}`
-  }
+  };
   const onClickCreate = () => {
     console.log(wantYear, wantMonth);
     console.log(startYear, startMonth, startDay);

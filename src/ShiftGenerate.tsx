@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { ShiftGenerateFrom } from "./components/ShiftGenerateForm";
+import { ShiftGenerateFormMUI } from "./components/ShiftGenerateFormMUI";
 
     
 
@@ -22,18 +23,12 @@ export const ShiftGenerate = () => {
     }
     return (
         <>
-        <div style={{backgroundColor:"#F4F4F4",margin:"0"}}>
-        <h1 style={{marginTop:"0px", color:"#23221F"}}>シフト作成</h1>
-        <ShiftGenerateFrom />
+        <div style={{backgroundColor:"#F4F4F4",margin:"0",paddingBottom:"40px",height:"100vh"}}>
+        <h1 style={{margin:"0px 20px",padding:"10px 10px", color:"#23221F"}}>シフト作成</h1>
+        <ShiftGenerateFormMUI />
+        {/* <ShiftGenerateFrom /> */}
         
         </div>
-        <button onClick={onClickGenerate} style={{
-            backgroundColor: "#ffb74d",
-            width: "200px",
-            border: "none",
-            padding: "5px 8px",
-            borderRadius: "5px"
-          }}>シフト作成</button>
         </>
     )
 }
