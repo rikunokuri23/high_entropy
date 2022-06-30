@@ -22,7 +22,8 @@ const headerStyle = {
     padding: "6px 0px",
     backgroundColor: "#B2DFDB",
     display:"flex",
-    alignItems:"center"
+    alignItems:"center",
+    marginBottom: "0px"
 }
 const titleStyle = {
     color: "#000",

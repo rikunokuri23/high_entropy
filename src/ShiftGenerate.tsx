@@ -22,9 +22,18 @@ export const ShiftGenerate = () => {
     }
     return (
         <>
-        <h1>シフト作成</h1>
+        <div style={{backgroundColor:"#F4F4F4",margin:"0"}}>
+        <h1 style={{marginTop:"0px", color:"#23221F"}}>シフト作成</h1>
         <ShiftGenerateFrom />
-        <button onClick={onClickGenerate}>作成</button>
+        
+        </div>
+        <button onClick={onClickGenerate} style={{
+            backgroundColor: "#ffb74d",
+            width: "200px",
+            border: "none",
+            padding: "5px 8px",
+            borderRadius: "5px"
+          }}>シフト作成</button>
         </>
     )
 }

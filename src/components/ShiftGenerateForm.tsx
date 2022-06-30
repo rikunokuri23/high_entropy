@@ -20,11 +20,11 @@ export const ShiftGenerateFrom = () => {
 
   const [startYear, setStartYear] = useState(new Date().getFullYear());
   const [startMonth, setStartMonth] = useState(new Date().getMonth() + 1);
-  const [startDay, setStartDay] = useState(new Date().getDay());
+  const [startDay, setStartDay] = useState(new Date().getDate());
 
   const [endYear, setEndYear] = useState(new Date().getFullYear());
   const [endMonth, setEndMonth] = useState(new Date().getMonth() + 1);
-  const [endDay, setEndDay] = useState(new Date().getDay());
+  const [endDay, setEndDay] = useState(new Date().getDate());
 
   const [wantWedge, setWantWedge] = useState(50000);
   const selectWantYear = (e:any) => {
@@ -58,7 +58,7 @@ export const ShiftGenerateFrom = () => {
   };
   const setYear = () => {
     let list: Array<any> = [];
-    for (let i = 1900; i <= new Date().getFullYear(); i++) {
+    for (let i = 2022; i <= new Date().getFullYear()+5; i++) {
       list.push(
         <option key={`year_${i}`} value={i}>
           {i}
@@ -137,7 +137,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={wantYear}
                 onChange={selectWantYear}
-                id="birth-year"
+                id="want-year"
                 name="year"
               >
                 {setYear()}
@@ -147,7 +147,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={wantMonth}
                 onChange={selectWantMonth}
-                id="birth-month"
+                id="want-month"
                 name="month"
               >
                 {setMonth()}
@@ -159,7 +159,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={startYear}
                 onChange={selectStartYear}
-                id="birth-year"
+                id="start-year"
                 name="year"
               >
                 {setYear()}
@@ -169,7 +169,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={startMonth}
                 onChange={selectStartMonth}
-                id="birth-month"
+                id="start-month"
                 name="month"
               >
                 {setMonth()}
@@ -179,7 +179,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={startDay}
                 onChange={selectStartDay}
-                id="birth-day"
+                id="start-day"
                 name="day"
               >
                 {setDay()}
@@ -189,7 +189,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={endYear}
                 onChange={selectEndYear}
-                id="birth-year"
+                id="end-year"
                 name="year"
               >
                 {setYear()}
@@ -199,7 +199,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={endMonth}
                 onChange={selectEndMonth}
-                id="birth-month"
+                id="end-month"
                 name="month"
               >
                 {setMonth()}
@@ -209,7 +209,7 @@ export const ShiftGenerateFrom = () => {
                 // native
                 value={endDay}
                 onChange={selectEndDay}
-                id="birth-day"
+                id="end-day"
                 name="day"
               >
                 {setDay()}
@@ -245,7 +245,8 @@ export const ShiftGenerateFrom = () => {
             backgroundColor: "#ffb74d",
             width: "200px",
             border: "none",
-            padding: "5px 8px"
+            padding: "5px 8px",
+            borderRadius: "5px"
           }}>シフト作成</button>
       </div>
     </div>
