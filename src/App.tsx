@@ -5,7 +5,7 @@ import { Header } from './components/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ShiftGenerate } from './ShiftGenerate';
 import { ArbeitSetting } from './ArbeitSetting';
-import { Calendar } from './Calendar';
+import { CalendarPase } from './CalendarPase';
 import { Result } from './Result';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ShiftGenerate/>} />
         <Route path="/arbeitsetting" element={<ArbeitSetting/>} />
-        <Route path="/calendar" element={<Calendar/>} />
+        <Route path="/calendar" element={<CalendarPase/>} />
         <Route path="/result" element={<Result/>} />
       </Routes>
       </BrowserRouter>
