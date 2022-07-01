@@ -10,6 +10,7 @@ export const CalendarPase = () => {
         <>
         {/* <h1>カレンダー</h1> */}
         <Calender />
+        <p style={{marginLeft:"10px"}}>by FullCalendar</p>
         </>
     )
 }

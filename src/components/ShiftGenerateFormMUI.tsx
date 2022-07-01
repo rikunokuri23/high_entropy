@@ -2,7 +2,6 @@ import { useState }  from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { createTheme, ThemeProvider } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -131,7 +130,7 @@ export const ShiftGenerateFormMUI = () => {
     <>
       <div style={{backgroundColor:"#fff",marginBottom:"20px",marginLeft:"20px",marginRight:"20px",paddingBottom:"10px",minHeight:"100%"}}>
         <h2 style={{marginTop:"0px",marginLeft:"30px",marginBottom:"0px",padding:"10px 10px"}}>{`${wantYear}年${wantMonth}月`}</h2>
-        <div style={{backgroundColor:"#F4F4F4",margin:"0px 30px", padding:"20px 0px"}}>
+        <div style={{backgroundColor:"#F4F4F4",margin:"0px 30px", padding:"20px 0px",borderRadius:"10px"}}>
         <div style={{paddingBottom:"10px"}}>
           <p style={{ display: "inline-block", fontSize: "20px",width:"150px",paddingLeft:"20px" }}>指定月</p>
         <FormControl sx={{ m: 1, minWidth: 100 }}>
@@ -276,7 +275,7 @@ export const ShiftGenerateFormMUI = () => {
           }}>シフト作成</button> */}
       </div>
       <div style={{display:"flex",justifyContent:"center"}}>
-      <button onClick={onClickGenerate} style={{
+      <button onClick={onClickCreate} style={{
             backgroundColor: "#ffb74d",
             width: "200px",
             border: "none",
