@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom"
 
 export const Result = () => {
-    // const location:any = useLocation();
+    const location2:any = useLocation();
 
     const location:any = {data:{
         result:{0: {
@@ -129,10 +129,10 @@ export const Result = () => {
         }}
     }}
 
-    // console.log(location.state.data.results[0].shifts);
-    // console.log(location.data.results.shift.shifts);
-    console.log(location.data.result[0].shifts);
-    console.log(location.data)
+    console.log("locations2",location2.state.data.result[0].shifts);
+    // console.log(location2.data.results.shift.shifts);
+    // console.log(location.data.result[0].shifts);
+    // console.log(location.data)
     const shiftResult:Array<any> = location.data.result[0].shifts;
     let totalWorkTime = 0;
     shiftResult.map((shift) => {
