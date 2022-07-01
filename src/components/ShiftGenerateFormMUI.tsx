@@ -4,9 +4,11 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { shiftResponse } from "./event-utils";
 
 export const ShiftGenerateFormMUI = () => {
   const navigate = useNavigate();
+
   // state here
   const [age, setAge] = useState("");
   const [wantYear, setWantYear] = useState(new Date().getFullYear());
@@ -91,15 +93,18 @@ export const ShiftGenerateFormMUI = () => {
   console.log(wantYear);
 
   const onClickGenerate = () => {
-    axios.post("http://20.5.121.159:5000/api/v1/shifts/create",{  
-        "expected_salary": 50000,
-        "period": {
-            "from": "2022-07-01",
-            "to":"2022-07-08"
-        }
-    }).then((res) => {
-        navigate("/result",{ state: res.data });
-    })}
+    // axios.post("http://20.5.121.159:5000/api/v1/shifts/create",{  
+    //     "expected_salary": 50000,
+    //     "period": {
+    //         "from": "2022-07-01",
+    //         "to":"2022-07-08"
+    //     }
+    // }).then((res) => {
+    //     navigate("/result",{ state: res.data });
+    // })
+    const calcResult = shiftResponse;
+    navigate("/result",{ state: calcResult });
+  }
 
     const formatDate = (year:number,month:number,day:number) => {
       const formatMonth = ("00" + String(month)).slice(-2);
@@ -275,7 +280,7 @@ export const ShiftGenerateFormMUI = () => {
           }}>シフト作成</button> */}
       </div>
       <div style={{display:"flex",justifyContent:"center"}}>
-      <button onClick={onClickCreate} style={{
+      <button onClick={onClickGenerate} style={{
             backgroundColor: "#ffb74d",
             width: "200px",
             border: "none",

@@ -7,6 +7,7 @@ import {  INITIAL_EVENTS,createEventId } from "./event-utils";
 import { useCallback, useEffect, useState } from "react";
 // import { Sidebar } from "./Sidebar";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 interface ItemType  {
     kind: string;
@@ -57,12 +58,14 @@ interface CalendarEventsType {
 export const Calender = ()=> {
     const [currentEvents,setCurrentEvents] = useState<EventApi[]>([]);
     const handleEvents = useCallback((events: EventApi[]) => setCurrentEvents(events),[]);
+    const locationShift:any = useLocation();
+    console.log("location",locationShift.state);
 
 
     const [data,setData] = useState<CalendarEventsType[]>([]);
     useEffect(()=>{
         axios.get<EventsType>(
-          "http://high-entropy.australiaeast.cloudapp.azure.com:8080/get_calendar"
+          "http://high-entropy.australiaeast.cloudapp.azure.com:8080/get_calendar2"
           ).then(
               (res) => {
                   const dataArray: any = res.data.items.map((resp) => {
@@ -82,7 +85,8 @@ export const Calender = ()=> {
                           }
                       }
                   });
-                  setData([...dataArray])
+                //   setData([...dataArray])
+                  setData(dataArray.concat([...locationShift.state]))
                  
               }
           );
@@ -137,7 +141,7 @@ export const Calender = ()=> {
             console.log(diffStart / 1000 / 60 / 60 - 9, diffEnd / 1000 / 60 / 60 - 9);
             console.log(INITIAL_EVENTS[0].start);
     }
-    
+    // console.log("concatData",data.concat([...locationShift.state]))
     return (
         <>
         <div className="demo-app" style={{display:"flex",minHeight:"100%"}}>
