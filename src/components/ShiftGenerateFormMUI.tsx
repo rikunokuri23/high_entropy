@@ -102,8 +102,8 @@ export const ShiftGenerateFormMUI = () => {
     // }).then((res) => {
     //     navigate("/result",{ state: res.data });
     // })
-    const calcResult = shiftResponse;
-    navigate("/result",{ state: calcResult });
+    // const calcResult = shiftResponse;
+    // navigate("/result",{ state: calcResult });
   }
 
     const formatDate = (year:number,month:number,day:number) => {
@@ -280,7 +280,7 @@ export const ShiftGenerateFormMUI = () => {
           }}>シフト作成</button> */}
       </div>
       <div style={{display:"flex",justifyContent:"center"}}>
-      <button onClick={onClickGenerate} style={{
+      <button onClick={onClickCreate} style={{
             backgroundColor: "#ffb74d",
             width: "200px",
             border: "none",
