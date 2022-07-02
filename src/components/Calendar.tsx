@@ -86,7 +86,7 @@ export const Calender = ()=> {
                       }
                   });
                 //   setData([...dataArray])
-                  setData(dataArray.concat([...locationShift.state]))
+                   setData(dataArray.concat([...locationShift.state]))
                  
               }
           );
