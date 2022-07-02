@@ -155,11 +155,11 @@ export const ShiftGenerate = () => {
     }
     return (
         <>
-        <div style={{backgroundColor:"#F4F4F4",margin:"0",paddingBottom:"40px",height:"80vh"}}>
+        <div style={{backgroundColor:"#F4F4F4",margin:"0",paddingBottom:"40px",height:"85vh"}}>
         <h1 style={{margin:"0px 20px",padding:"10px 10px", color:"#23221F"}}>シフト作成</h1>
         <ShiftGenerateFormMUI />
         {/* <ShiftGenerateFrom /> */}
-        <button onClick={onClickGenerate}>test</button>
+        {/* <button onClick={onClickGenerate}>test</button> */}
         
         </div>
         </>

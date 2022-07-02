@@ -57,7 +57,10 @@ export const ArbeitSetting = () => {
     
     return (
         <>
-        <Typography sx={{ ml: "5%", fontSize: 30, mt: "1%", mb: "1%" }}>アルバイト設定</Typography>
+        <div style={{backgroundColor:"#F4F4F4",margin:"0",paddingBottom:"40px",height:"100vh"}}>
+        {/* <Typography sx={{ ml: "5%", fontSize: 30, mt: "1%", mb: "1%" }}>アルバイト設定</Typography> */}
+        <h1 style={{margin:"0px 20px",padding:"10px 10px", color:"#23221F"}}>アルバイト設定</h1>
+        <div style={{backgroundColor:"#fff",marginBottom:"20px",marginLeft:"20px",marginRight:"20px",paddingTop:"20px",paddingBottom:"10px",minHeight:"100%"}}>
         <Stack spacing = {3} ml="5%" mr="-10%" justifyContent="center">
             { arbeits.map((arbeit: job, idx: number) => {
                 return (
@@ -154,6 +157,8 @@ export const ArbeitSetting = () => {
                 )
             })}
         </Stack>
+        </div>
+        </div>
         </>
     )
 }
